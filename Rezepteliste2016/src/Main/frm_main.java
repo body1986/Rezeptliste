@@ -20,7 +20,6 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JInternalFrame;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Frame;
 
 public class frm_main extends JFrame {
 	private JTable table;
@@ -48,6 +47,7 @@ public class frm_main extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 926, 548);
 		getContentPane().setLayout(null);
+		setLocationRelativeTo(null);
 		
 		Panel panel = new Panel();
 		panel.setBackground(Color.ORANGE);
@@ -114,17 +114,31 @@ public class frm_main extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				frm_Wochenliste wochenliste = new frm_Wochenliste();
 				wochenliste.setVisible(true);
-				frm_main.this.dispose();			
+			frm_main.this.dispose();			
 			}
 		});
 		btn_Wochenliste.setBounds(13, 52, 132, 34);
 		panel_1.add(btn_Wochenliste);
 		
 		JButton btn_Einkaufsliste = new JButton("Einkaufsliste");
+		btn_Einkaufsliste.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				frm_Einkaufsliste Einkaufsliste = new frm_Einkaufsliste();
+				Einkaufsliste.setVisible(true);
+			frm_main.this.dispose();			
+			}
+		});
 		btn_Einkaufsliste.setBounds(13, 97, 132, 34);
 		panel_1.add(btn_Einkaufsliste);
 		
 		JButton btn_Zutaten = new JButton("Zutaten");
+		btn_Zutaten.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frm_Zutaten Zutaten = new frm_Zutaten();
+				Zutaten.setVisible(true);
+			frm_main.this.dispose();	
+			}
+		});
 		btn_Zutaten.setBounds(13, 142, 132, 34);
 		panel_1.add(btn_Zutaten);
 	}

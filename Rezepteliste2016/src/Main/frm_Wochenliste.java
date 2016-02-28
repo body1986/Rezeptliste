@@ -42,6 +42,7 @@ public class frm_Wochenliste extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 863, 555);
 		getContentPane().setLayout(null);
+		setLocationRelativeTo(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(152, 251, 152));
@@ -106,6 +107,13 @@ public class frm_Wochenliste extends JFrame {
 		getContentPane().add(panel_1);
 		
 		JButton button = new JButton("Rezepte");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frm_main Main = new frm_main();
+				Main.setVisible(true);
+			frm_Wochenliste.this.dispose();
+			}
+		});
 		button.setBounds(10, 11, 135, 34);
 		panel_1.add(button);
 		
@@ -126,6 +134,13 @@ public class frm_Wochenliste extends JFrame {
 		panel_1.add(button_2);
 		
 		JButton button_3 = new JButton("Zutaten");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frm_Zutaten Zutaten = new frm_Zutaten();
+				Zutaten.setVisible(true);
+				frm_Wochenliste.this.dispose();	
+			}
+		});
 		button_3.setBounds(13, 142, 132, 34);
 		panel_1.add(button_3);
 	}

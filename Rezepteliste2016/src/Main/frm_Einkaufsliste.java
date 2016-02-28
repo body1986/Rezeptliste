@@ -47,6 +47,7 @@ public class frm_Einkaufsliste extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setLocationRelativeTo(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(210, 180, 140));
@@ -114,10 +115,24 @@ public class frm_Einkaufsliste extends JFrame {
 		contentPane.add(panel_1);
 		
 		JButton button = new JButton("Rezepte");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frm_main Main = new frm_main();
+				Main.setVisible(true);
+			frm_Einkaufsliste.this.dispose();
+			}
+		});
 		button.setBounds(10, 11, 135, 34);
 		panel_1.add(button);
 		
 		JButton button_1 = new JButton("Wochenliste");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frm_Wochenliste wochenliste = new frm_Wochenliste();
+				wochenliste.setVisible(true);
+			frm_Einkaufsliste.this.dispose();			
+			}
+		});
 		button_1.setBounds(13, 52, 132, 34);
 		panel_1.add(button_1);
 		

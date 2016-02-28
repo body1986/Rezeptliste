@@ -45,6 +45,7 @@ public class frm_Zutaten extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setLocationRelativeTo(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(222, 184, 135));
@@ -61,6 +62,12 @@ public class frm_Zutaten extends JFrame {
 		contentPane.add(table);
 		
 		JButton btnZutatAnlegen = new JButton("Zutat anlegen");
+		btnZutatAnlegen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frm_DLNewZutat NewZutat = new frm_DLNewZutat();
+				NewZutat.setVisible(true);						
+			}
+		});
 		btnZutatAnlegen.setBounds(719, 87, 176, 34);
 		contentPane.add(btnZutatAnlegen);
 		
@@ -89,10 +96,24 @@ public class frm_Zutaten extends JFrame {
 		panel_1.add(button);
 		
 		JButton button_1 = new JButton("Wochenliste");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frm_Wochenliste wochenliste = new frm_Wochenliste();
+				wochenliste.setVisible(true);
+				frm_Zutaten.this.dispose();			
+			}
+		});
 		button_1.setBounds(13, 52, 132, 34);
 		panel_1.add(button_1);
 		
 		JButton button_2 = new JButton("Einkaufsliste");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frm_Einkaufsliste einkaufsliste = new frm_Einkaufsliste();
+				einkaufsliste.setVisible(true);
+				frm_Zutaten.this.dispose();	
+			}
+		});
 		button_2.setBounds(13, 97, 132, 34);
 		panel_1.add(button_2);
 		
