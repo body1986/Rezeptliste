@@ -29,13 +29,13 @@ public class SQLDB {
 		return false;
 		}}
 	
-	public boolean Insert_Zutat(String ID,String Name, DecimalFormat Preis,String Laden,String Kategorie,String Einheit){
+	public boolean Insert_Zutat(String ID,String Name, String Preis,String Laden,String Kategorie,String Einheit){
 		
-		
+		connectToMysql();
 		Statement stmt = null;
 		try {
 		stmt = connection.createStatement();
-		String query = "INSERT INTO Zutaten (ID, Name, Laden, Kategorie, Einheit, Status)"+"VALUES( '" + ID + "','" + Name + "','" + Laden +"','" + Kategorie +"','" + Einheit +"','" + "1" + "')";
+		String query = "INSERT INTO Zutaten (ID, Name ,Preis, Laden, Kategorie, Einheit, Status)"+"VALUES( '" + ID + "','" + Name + "','" + Preis +"','" + Laden +"','" + Kategorie +"','" + Einheit +"','" + "1" + "')";
 		//query = query
 		stmt.executeUpdate(query);
 		return true;
@@ -43,6 +43,8 @@ public class SQLDB {
 			return false;
 		}	
 	}
+	
+	//public mys
 	
 	
 	
